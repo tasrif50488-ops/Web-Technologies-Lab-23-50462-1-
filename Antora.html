@@ -1,66 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Portfolio</title>
-</head>
-<body>
+<html> 
+    <head>
+        <title> 
+            Login Form
+        </title>
+    </head>
+    <body>
+      <h2>
+        Login Form
+      </h2>
 
-    <div>
-        <h1>Sabekunnaher Antora</h1>
-    </div>
+      <form id="loginForm">
+        Email: <input type="text" id="email"><br><br>
+        Password: <input type="password" id="password"><br><br>
 
-    <div>
-        <h2>Personal Information</h2>
-        <p>Name: Sabekunnaher Antora</p>
-        <p>Gender: Female</p>
-        <p>Phone: 01640000017</p>
-        <p>Email: Sabekunnaherantora@gmail.com</p>
-    </div>
+        <buttontype="submit">Login</button>
 
-    <div>
-        <h2>Educational Qualification</h2>
 
-        <table border="1">
-            <tr>
-                <th>Degree</th>
-                <th>Institution</th>
-                <th>Board / University</th>
-                <th>Passing Year</th>
-                <th>Status</th>
-            </tr>
+      </form>
 
-            <tr>
-                <td>SSC</td>
-                <td>Kamarer Char Public Girls' High School</td>
-                <td>Dhaka Board</td>
-                <td>2019</td>
-                <td>Completed</td>
-            </tr>
+      <p id="error" style="color:red;"></p>
+      <p id="count"></p>
 
-            <tr>
-                <td>HSC</td>
-                <td>Sherpur Govt. College</td>
-                <td>Mymensingh Board</td>
-                <td>2021</td>
-                <td>Completed</td>
-            </tr>
+      <script>
+        let worngcount=0;
+        document.getElementByld("loginForm").addEventlistener("submit",function(e){
+         e.preventDefault();
 
-            <tr>
-                <td>BSc in CSE</td>
-                <td>American International University-Bangladesh (AIUB)</td>
-                <td>AIUB</td>
-                <td>—</td>
-                <td>10th Semester (Running)</td>
-            </tr>
-        </table>
-    </div>
+         let email=document.getElementByld("email").value;
+         let password=document.getElementByld("password").value;
+         let errorMsg="";
 
-    <div>
-        <h2>My Skills</h2>
-        <p>HTML</p>
-        <p>CSS (Basic)</p>
-        <p>JavaScript (Basic)</p>
-    </div>
+         if(!email.includes(@){
+            errorMsg="Email must contain@";
+         }
+         else if(password.length < 6){
+            errorMsg = "Password must be at least 6 characters";
+         }
+         else if(!password.includes("#")){
+            errorMsg = "Password must contain #";
+         }
+         if(errorMsg !== ""){
+           wrongCount++;
 
-</body>
+            document.getElementById("error").innerHTML = errorMsg;
+             document.getElementById("count").innerHTML = 
+            "Wrong submission count: " + wrongCount;
+         }
+        else{
+            document.getElementById("error").innerHTML = "Login Successful";
+            document.getElementById("count").innerHTML = "";
+         }
+
+
+
+
+
+
+
+
+        });
+      </script>
+
+
+      
+
+    </body>
 </html>
